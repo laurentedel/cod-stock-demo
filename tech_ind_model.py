@@ -12,7 +12,7 @@ tf.random.set_seed(4)
 from util import create_dataset, history_points
 
 def run_model(symbol,plot=False):
-
+    print ("running model")
     # dataset
 
     ohlcv_histories, technical_indicators, next_day_open_values, unscaled_y, y_normaliser = create_dataset(symbol)
