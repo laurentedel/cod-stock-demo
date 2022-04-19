@@ -81,6 +81,7 @@ class Predict():
         
 
     def calculate_earnings(self):
+        print("calculating earnings")
         self.collect_earnings()
         revenue = 0
         prev_price = -1
