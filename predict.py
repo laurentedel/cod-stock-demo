@@ -18,6 +18,7 @@ class Predict():
         self.predicted_open_price_tomorrow = 0
 
     def prediction(self, last=0):
+        print("computing prediction")
         start = 0
         end = -1
         ohlcv_test_last, tech_ind_test_last, data_normaliser, y_normaliser = self.predict_last_values(self.symbol, last)
@@ -108,8 +109,6 @@ class Predict():
                 #if prev_predicted < trans['predicted']:
 
                 revenue += trans['price'] - prev_price
-                ###print(f"revenue:{revenue}")
-                # print(f"revenue  here  {value - prev_price}")
         percent = round((revenue / first_price) * 100, 2)
         # print(trans)
         # print(f"symbol-{self.symbol}:revenue {revenue}:revenue % {percent} %:first price {first_price}"
@@ -118,7 +117,6 @@ class Predict():
         data = [[ self.symbol,round(revenue,2),percent,first_price,trans['price'],self.predicted_open_price_tomorrow,trans['recommendation'],trans['signal'] ]]
         df = pd.DataFrame(data, columns = ['Symbol', 'Revenue', 'Revenue Percentage', 'First price', 'Last price', 'Predicted price', 'Recommendation', 'Signal'])
         return df
-        # return revenue, percent, first_price,value,
 
     def predict_last_values(self, symbol, last=0):
         data = get_raw_data(symbol,False)
