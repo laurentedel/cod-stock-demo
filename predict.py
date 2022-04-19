@@ -50,14 +50,14 @@ class Predict():
             delta = 1 - self.predicted_price[x]/last_pred_price
             if delta < 0:
                 signal = "positive"
-                if transactions == "sell" or transactions == "dont buy":
+                if transactions == "sell" or transactions == "don't buy":
                     transactions = "buy"
                 elif transactions == "buy" or transactions == "keep":
                     transactions = "keep"
             elif delta > 0:
                 signal = "negative"
-                if transactions == "sell" or transactions == "dont buy":
-                    transactions = "dont buy"
+                if transactions == "sell" or transactions == "don't buy":
+                    transactions = "don't buy"
                 else:
                     transactions = "sell"
             else:
@@ -114,7 +114,7 @@ class Predict():
         # print(f"symbol-{self.symbol}:revenue {revenue}:revenue % {percent} %:first price {first_price}"
         #     f":last price {trans['price']}:predicted price {self.predicted_open_price_tomorrow}:"
         #     f" recommandation {trans['recommendation']}: signal {trans['signal']}")
-        data = [[ self.symbol,round(revenue,2),percent,first_price,trans['price'],self.predicted_open_price_tomorrow,trans['recommendation'],trans['signal'] ]]
+        data = [[ self.symbol,round(revenue,2),str(percent) + "%",first_price,trans['price'],self.predicted_open_price_tomorrow,trans['recommendation'],trans['signal'] ]]
         df = pd.DataFrame(data, columns = ['Symbol', 'Revenue', 'Revenue Percentage', 'First price', 'Last price', 'Predicted price', 'Recommendation', 'Signal'])
         return df
 
