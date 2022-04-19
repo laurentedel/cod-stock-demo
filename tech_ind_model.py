@@ -30,8 +30,8 @@ def run_model(symbol,plot=False):
 
     unscaled_y_test = unscaled_y[n:]
 
-    print("Training Shape " + str(ohlcv_train.shape))
-    print("Testing Shape " + str(ohlcv_test.shape))
+    #print("Training Shape " + str(ohlcv_train.shape))
+    #print("Testing Shape " + str(ohlcv_test.shape))
 
 
     # model architecture
