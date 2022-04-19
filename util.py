@@ -22,7 +22,7 @@ def get_raw_data(symbol,print_sample=True):
 
 
 def create_dataset(symbol):
-    data = get_raw_data(symbol)
+    data = get_raw_data(symbol, False)
     data_normaliser = preprocessing.MinMaxScaler()
     data_normalised = data_normaliser.fit_transform(data)
     ohlcv_histories_normalised = get_ohlcv_histories_normalised(data_normalised)
