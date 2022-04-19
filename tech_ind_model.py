@@ -60,7 +60,7 @@ def run_model(symbol,plot=False):
     # our model will accept the inputs of the two branches and
     # then output a single value
     model = Model(inputs=[lstm_branch.input, technical_indicators_branch.input], outputs=z)
-    adam = optimizers.Adam(lr=0.0005)
+    adam = tf.keras.optimizers.Adam(learning_rate=0.0005)
     model.compile(optimizer=adam, loss='mse')
     model.fit(x=[ohlcv_train, tech_ind_train], y=y_train, batch_size=32, epochs=50, shuffle=True, validation_split=0.1,verbose=0)
 
