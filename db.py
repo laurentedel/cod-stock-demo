@@ -26,6 +26,7 @@ class Db:
         
         #print(query)
         self.curs.execute(query)
+        print (f"{self.TABLENAME} has been created")
     
     def upsert(self, data):
 
@@ -59,3 +60,4 @@ class Db:
     def drop_stocks_table(self):
         query = "DROP TABLE IF EXISTS "+self.TABLENAME
         self.curs.execute(query)
+        print (f"{self.TABLENAME} has been dropped")
