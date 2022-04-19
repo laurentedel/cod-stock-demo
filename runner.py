@@ -10,7 +10,7 @@ from os import path
 symbols=['NLOK','AMD','QRVO','NVDA','AAPL','AMZN', 
          'GOOGL','FB','ORCL','CSCO','IBM','UBER','LYFT','COST',
          'MCD','BA','AAL','MSFT','GM','KO','QCOM','BABA','UAA',
-         'SCON','HPQ','ZNGA','GM','QCOM','JBLU','XRX','ADBE']
+         'HPQ','ZNGA','GM','QCOM','JBLU','XRX','ADBE']
 
 t = 1
 for symbol in symbols:
