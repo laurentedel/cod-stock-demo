@@ -3,6 +3,7 @@ import os
 
 class Db:
     def __init__(self):
+        print ("connecting...")
         opts = {}
         opts['authentication'] = 'BASIC'
         opts['avatica_user'] = os.environ["WORKLOAD_USER"]
@@ -11,6 +12,7 @@ class Db:
         self.TABLENAME = "stocks_feed"
         self.conn = phoenixdb.connect(database_url, autocommit=True,**opts)
         self.curs = self.conn.cursor()
+        print ("connection ok")
 
     def create_stock_table(self):
         query = """
