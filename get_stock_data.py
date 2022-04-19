@@ -45,7 +45,7 @@ def upsert_data(symbol, data, time_window='daily',records=100):
       model.upsert(rows)
       rows = []
       i=1
-      print (f"Ingested {total_records} records for symbol {symbol}")
+      # print (f"Ingested {total_records} records for symbol {symbol}")
 
   if len(rows) > 0 :
     model.upsert(rows)
