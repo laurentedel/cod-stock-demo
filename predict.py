@@ -108,11 +108,14 @@ class Predict():
                 revenue += trans['price'] - prev_price
                 ###print(f"revenue:{revenue}")
                 # print(f"revenue  here  {value - prev_price}")
-        percent = (revenue / first_price) * 100
-        print(trans)
-        print(f"symbol-{self.symbol}:revenue {revenue}:revenue % {percent} %:first price {first_price}"
-              f":last price {trans['price']}:predicted price {self.predicted_open_price_tomorrow}:"
-              f" recommandation {trans['recommendation']}: signal {trans['signal']}")
+        percent = round((revenue / first_price) * 100, 2)
+        # print(trans)
+        # print(f"symbol-{self.symbol}:revenue {revenue}:revenue % {percent} %:first price {first_price}"
+        #     f":last price {trans['price']}:predicted price {self.predicted_open_price_tomorrow}:"
+        #     f" recommandation {trans['recommendation']}: signal {trans['signal']}")
+        data = [[ self.symbol,round(revenue,2),percent,first_price,trans['price'],self.predicted_open_price_tomorrow,trans['recommendation'],trans['signal'] ]]
+        df = pd.DataFrame(data, columns = ['Symbol', 'Revenue', 'Revenue Percentage', 'First price', 'Last price', 'Predicted price', 'Recommendation', 'Signal'])
+        return df
         # return revenue, percent, first_price,value,
 
     def predict_last_values(self, symbol, last=0):
