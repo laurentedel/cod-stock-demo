@@ -115,7 +115,7 @@ class Predict():
         #     f":last price {trans['price']}:predicted price {self.predicted_open_price_tomorrow}:"
         #     f" recommandation {trans['recommendation']}: signal {trans['signal']}")
         data = [[ self.symbol,round(revenue,2),str(percent) + "%",first_price,trans['price'],self.predicted_open_price_tomorrow,trans['recommendation'],trans['signal'] ]]
-        df = pd.DataFrame(data, columns = ['Symbol', 'Revenue', 'Revenue Percentage', 'First price', 'Last price', 'Predicted price', 'Recommendation', 'Signal'])
+        df = pd.DataFrame(data, columns = ['Symbol', 'Revenue', 'Performance', 'First price', 'Last price', 'Predicted price', 'Recommendation', 'Signal'])
         return df
 
     def predict_last_values(self, symbol, last=0):
