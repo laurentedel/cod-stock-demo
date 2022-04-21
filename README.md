@@ -6,7 +6,7 @@ We're assuming that you have a COD and CML instances up and running. You will al
 
 As we'll use Python to access COD from CML, go in the Python tab of your COD instance and copy the Phoenix Python URL endpoint
 
-<img width="1555" alt="image" src="https://user-images.githubusercontent.com/7782997/164310529-1e94c958-bd08-4a88-a4dd-32615b5d93d0.png">
+![image](https://user-images.githubusercontent.com/7782997/164310529-1e94c958-bd08-4a88-a4dd-32615b5d93d0.png)
 
 Now, in CML, the new project being imported with this repository, we'll have to setup some environment variables.
 For that, go in Project Settings / Advanced and put the following variables:
@@ -38,7 +38,7 @@ The `runner.py` will do the following:
 * Run the prediction over the last 120 days
 * Compute the predicted earnings if we buy/sell the stocks at the exact rates
 
-<img width="1022" alt="image" src="https://user-images.githubusercontent.com/7782997/164312863-8e9c058c-afa3-43ca-8727-dd22928e765e.png">
+![image](https://user-images.githubusercontent.com/7782997/164312863-8e9c058c-afa3-43ca-8727-dd22928e765e.png)
 
 So for each of the 30 stocks here, you will get the latest data, stored in COD, plotting the real and the predicted stock prices, and calculate earnings: 
 * revenue
@@ -47,9 +47,9 @@ So for each of the 30 stocks here, you will get the latest data, stored in COD, 
 * the recommendation between don't buy, keep or sell
 * a signal high/low depending on the strength of the recommendation
 
-<img width="1428" alt="image" src="https://user-images.githubusercontent.com/7782997/164313976-fcf49325-d879-4ca1-8186-619efa9e29bc.png">
+![image](https://user-images.githubusercontent.com/7782997/164313976-fcf49325-d879-4ca1-8186-619efa9e29bc.png)
 
 At the very end, you'll have a dataframe with a recap of all the predictions
 
-<img width="1421" alt="image" src="https://user-images.githubusercontent.com/7782997/164314095-788008e2-5391-40af-9b60-9c6bd3c1b6eb.png">
+![image](https://user-images.githubusercontent.com/7782997/164314095-788008e2-5391-40af-9b60-9c6bd3c1b6eb.png)
 
