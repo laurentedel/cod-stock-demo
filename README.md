@@ -34,6 +34,7 @@ There are 2 steps to follow:
 
 The `runner.py` will do the following:
 * Get daily stocks from Alpha Vantage
+* Cleaning data to have a normalized dataset
 * Store data in COD
 * Run the model and create the model file
 * Run the prediction over the last 120 days
