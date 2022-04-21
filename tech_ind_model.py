@@ -12,11 +12,11 @@ tf.random.set_seed(4)
 from util import create_dataset, history_points
 
 def run_model(symbol,plot=False):
-    print ("running model")
+    print ("normalizing dataset")
     # dataset
 
     ohlcv_histories, technical_indicators, next_day_open_values, unscaled_y, y_normaliser = create_dataset(symbol)
-
+    print("normalized dataset created")
     test_split = 0.9
     n = int(ohlcv_histories.shape[0] * test_split)
     test_length = len(ohlcv_histories) - n
@@ -62,8 +62,9 @@ def run_model(symbol,plot=False):
     model = Model(inputs=[lstm_branch.input, technical_indicators_branch.input], outputs=z)
     adam = tf.keras.optimizers.Adam(learning_rate=0.0005)
     model.compile(optimizer=adam, loss='mse')
+    print("model compiled - now running the fit")
     model.fit(x=[ohlcv_train, tech_ind_train], y=y_train, batch_size=32, epochs=50, shuffle=True, validation_split=0.1,verbose=0)
-
+    print("model trained")
 
     # evaluation
 
