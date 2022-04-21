@@ -7,6 +7,8 @@ class Db:
         opts['authentication'] = 'BASIC'
         opts['avatica_user'] = os.environ["WORKLOAD_USER"]
         opts['avatica_password'] = os.environ["WORKLOAD_PASSWORD"]
+        # opts['avatica_password'] = cryptocode.decrypt(os.environ["WORKLOAD_PASSWORD"], "MyCypher")
+        # use if WORKLOAD_PASSWORD stored as cryptocode.encrypt(WORKLOAD_PASSWORD, "MyCypher")
         database_url = os.environ["OPDB_ENDPOINT"]
         self.TABLENAME = "stocks_feed"
         self.conn = phoenixdb.connect(database_url, autocommit=True,**opts)
