@@ -28,8 +28,8 @@ pip3 install -r requirements.txt
 ```
 
 There are 2 steps to follow: 
-1. Run the `setup.py` script to connect to COD and create the table we'll need
-2. Run the `runner.py` script 
+1. Run the `1_setup.py` script to connect to COD and create the table we'll need
+2. Run the `2_runner.py` script 
 
 The `runner.py` will do the following:
 * Get daily stocks from Alpha Vantage
