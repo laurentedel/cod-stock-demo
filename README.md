@@ -17,6 +17,7 @@ WORKLOAD_USER=<USERNAME>
 WORKLOAD_PASSWORD=<PASSWORD>
 OPDB_ENDPOINT=<PHOENIX_PYTHON_URL_ENDPOINT>
 MAX_TEXT_LENGTH=1000000 # for libs installation
+TF_CPP_MIN_LOG_LEVEL=3 # for avoiding unnecessary Tensorflow logging
 ```
 
 ![image](https://user-images.githubusercontent.com/7782997/164311271-65cd0f1a-9545-4329-9bb6-653651dfe482.png)
