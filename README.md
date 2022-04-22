@@ -22,13 +22,9 @@ TF_CPP_MIN_LOG_LEVEL=3 # for avoiding unnecessary Tensorflow logging
 
 ![image](https://user-images.githubusercontent.com/7782997/164311271-65cd0f1a-9545-4329-9bb6-653651dfe482.png)
 
-Open a new session (4GB RAM minimum to install keras/tensorflow packages), and install all the required libraries (you might open a terminal window)
+Open a new session (3GB RAM minimum to install keras/tensorflow packages), and install all the required libraries (you might open a terminal window) by running the `0_bootstrap.py` script
 
-```
-pip3 install -r requirements.txt
-```
-
-There are 2 steps to follow: 
+There are still 2 steps to follow: 
 1. Run the `1_setup.py` script to connect to COD and create the table we'll need
 2. Run the `2_runner.py` script 
 
